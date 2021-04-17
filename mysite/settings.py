@@ -27,6 +27,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 
+"""
+ALLOWED_HOSTS が空のリストの時は、自動的に 
+['localhost', '127.0.0.1', '[::1]'] という
+3つのホストに対してチェックが行われます。 
+このままの設定では、これから私たちがデプロイして使う 
+PythonAnywhere のホストネームが含まれていません
+"""
 
 # Application definition
 
@@ -118,5 +125,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+#静的ファイルのパスの追加
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
